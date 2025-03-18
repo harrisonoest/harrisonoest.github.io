@@ -3,9 +3,14 @@ import "./App.css";
 // === Mantine ===
 import { MantineProvider, createTheme, AppShell, Text } from "@mantine/core";
 
+// === React ===
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 // === Components ===
 import { HeaderSimple } from "./Header/Header";
 import { Footer } from "./Footer/Footer";
+import { About } from "./About/About";
+import { Blog } from "./Blog/Blog";
 
 const theme = createTheme({
   fontFamily: "Fira Sans, sans-serif",
@@ -33,9 +38,15 @@ export default function App() {
         <AppShell.Header>
           <HeaderSimple />
         </AppShell.Header>
-        {/* <AppShell.Main> */}
-        <Text size="xl">Coming Soon...</Text>
-        {/* </AppShell.Main> */}
+        <AppShell.Main>
+          {/* <Text size="xl">Coming Soon...</Text> */}
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<About />} />
+              <Route path="/blog" element={<Blog />} />
+            </Routes>
+          </BrowserRouter>
+        </AppShell.Main>
         <AppShell.Footer>
           <Footer />
         </AppShell.Footer>

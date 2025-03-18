@@ -1,7 +1,6 @@
-
 // === Mantine ===
-import { Container, Text } from '@mantine/core'
-import classes from './About.module.css';
+import { Container, Text } from "@mantine/core";
+import classes from "./About.module.css";
 
 export function About() {
   return (
