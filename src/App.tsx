@@ -1,15 +1,15 @@
-import './App.css'
+import "./App.css";
 
 // === Mantine ===
-import { AppShell, createTheme, MantineProvider, Text } from '@mantine/core'
+import { MantineProvider, createTheme, AppShell, Text } from "@mantine/core";
 
 // === Components ===
-import { HeaderSimple } from './Header/Header';
-import { Footer } from './Footer/Footer';
+import { HeaderSimple } from "./Header/Header";
+import { Footer } from "./Footer/Footer";
 
 const theme = createTheme({
-  fontFamily: 'Fira Sans, sans-serif',
-  primaryColor: 'blue',
+  fontFamily: "Fira Sans, sans-serif",
+  primaryColor: "blue",
 });
 
 export default function App() {
@@ -18,16 +18,16 @@ export default function App() {
       <AppShell
         styles={{
           main: {
-            background: 'var(--mantine-color-dark-7)',
+            background: "var(--mantine-color-dark-7)",
           },
           header: {
-            background: 'var(--mantine-color-dark-7)',
-            borderBottom: '1px solid var(--mantine-color-dark-6)'
+            background: "var(--mantine-color-dark-7)",
+            borderBottom: "1px solid var(--mantine-color-dark-6)",
           },
           footer: {
-            background: 'var(--mantine-color-dark-7)',
-            borderTop: '1px solid var(--mantine-color-dark-6)'
-          }
+            background: "var(--mantine-color-dark-7)",
+            borderTop: "1px solid var(--mantine-color-dark-6)",
+          },
         }}
       >
         <AppShell.Header>
