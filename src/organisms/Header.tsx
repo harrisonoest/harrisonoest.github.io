@@ -1,34 +1,40 @@
+// === React ===
 import { useState } from 'react';
+
+// === Mantine ===
 import { Burger, Container, Group, Title } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { NavLink, useLocation } from 'react-router-dom';
+
+// === Components ===
+import { YetiLogo } from '../molecules/YetiLogo';
+
+// === Styles ===
 import classes from './Header.module.css';
-import { YetiLogo } from '../YetiLogo/YetiLogo';
 
 const links = [
   { link: '/about', label: 'About' },
+  { link: '/blog', label: 'Blog' },
   { link: '/projects', label: 'Projects' },
   { link: '/resume', label: 'Resume' },
-  { link: '/blog', label: 'Blog' },
   { link: '/contact', label: 'Contact' },
 ];
 
 export function HeaderSimple() {
   const [opened, { toggle }] = useDisclosure(false);
-  const [active, setActive] = useState(links[0].link);
+  const location = useLocation();
+  const [active, setActive] = useState(location.pathname);
 
   const items = links.map((link) => (
-    <a
+    <NavLink
       key={link.label}
-      href={link.link}
+      to={link.link}
       className={classes.link}
       data-active={active === link.link || undefined}
-      onClick={(event) => {
-        event.preventDefault();
-        setActive(link.link);
-      }}
+      onClick={() => setActive(link.link)}
     >
       {link.label}
-    </a>
+    </NavLink>
   ));
 
   return (

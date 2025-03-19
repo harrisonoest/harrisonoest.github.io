@@ -5,7 +5,7 @@
   color: var(--mantine-color-white);
 }
 
-/* .inner {
+.inner {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,6 +13,4 @@
   height: 100%;
   width: 100%;
   text-align: center;
-
-  background: var(--mantine-color-dark-8);
-} */
+}
