@@ -14,10 +14,10 @@ import classes from './Header.module.css';
 
 const links = [
   { link: '/about', label: 'About' },
-  { link: '/blog', label: 'Blog' },
-  { link: '/projects', label: 'Projects' },
-  { link: '/resume', label: 'Resume' },
-  { link: '/contact', label: 'Contact' },
+  // { link: '/blog', label: 'Blog' },
+  // { link: '/projects', label: 'Projects' },
+  // { link: '/resume', label: 'Resume' },
+  // { link: '/contact', label: 'Contact' },
 ];
 
 export function HeaderSimple() {
@@ -47,6 +47,6 @@ export function HeaderSimple() {
         {items}
       </Group>
       <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
-    </Container>
+    </Container >
   );
 }

@@ -1,7 +1,7 @@
 import "./App.css";
 
 // === Mantine ===
-import { MantineProvider, createTheme, AppShell, Text } from "@mantine/core";
+import { MantineProvider, createTheme, AppShell } from "@mantine/core";
 
 // === React ===
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -10,7 +10,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HeaderSimple } from "./organisms/Header";
 import { Footer } from "./organisms/Footer";
 import { About } from "./pages/About";
-import { Blog } from "./pages/Blog";
+// import { Blog } from "./pages/Blog";
+// import { BlogPost } from "./organisms/BlogPost";
 
 const theme = createTheme({
   fontFamily: "Fira Sans, sans-serif",
@@ -43,8 +44,9 @@ export default function App() {
           <AppShell.Main>
             <Routes>
               <Route path="/" element={<About />} />
-              <Route path="/about" element={<About />} />
+              {/* <Route path="/about" element={<About />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:id" element={<BlogPost />} /> */}
               <Route path="*" element={<About />} />
             </Routes>
           </AppShell.Main>

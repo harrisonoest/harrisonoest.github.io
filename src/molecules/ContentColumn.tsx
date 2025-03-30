@@ -16,7 +16,7 @@ interface ContentColumnProps {
   minHeight?: string | number;
   /** Optional height, defaults to 100px */
   height?: string | number;
-  /** Optional width, defaults to 70vh */
+  /** Optional width, defaults to 100% */
   width?: string | number;
   /** Optional flex direction, defaults to column */
   flexDirection?: 'row' | 'column';
@@ -30,11 +30,11 @@ export function ContentColumn({
   textAlign = 'center',
   minHeight = '10%',
   height = '100px',
-  width = '70vh',
+  width = '100%',
   flexDirection = 'column'
 }: ContentColumnProps) {
   return (
-    <Container size="xl" px="xs" py="md">
+    <Container size="xl" px="xs" py="md" style={{ width: '100%' }}>
       <Box
         style={{
           backgroundColor,
@@ -45,14 +45,14 @@ export function ContentColumn({
           width,
           display: 'flex',
           flexDirection,
-          justifyContent: 'center',
-          alignItems: 'center',
+          justifyContent: textAlign === 'center' ? 'center' : 'flex-start',
+          alignItems: textAlign === 'center' ? 'center' : 'flex-start',
           borderRadius: '8px',
           ...style
         }}
       >
         {children}
       </Box>
-    </Container >
+    </Container>
   );
 }

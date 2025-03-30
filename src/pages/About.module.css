@@ -1,16 +1,72 @@
-.about {
-  height: 100%;
+.container {
   width: 100%;
-  background-color: var(--mantine-color-dark-7);
+}
+
+.avatarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  border: 4px solid var(--mantine-color-blue-6);
+}
+
+.name {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 8px;
   color: var(--mantine-color-white);
 }
 
-.inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+.title {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.bio {
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
   width: 100%;
-  text-align: center;
+  margin: 0 auto;
+  height: 3px;
+  background-color: var(--mantine-color-blue-6);
+}
+
+.skillCard {
+  height: 100%;
+  text-align: left;
+  background-color: var(--mantine-color-dark-6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skillCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.projectLink {
+  color: var(--mantine-color-blue-4);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.projectLink:hover {
+  color: var(--mantine-color-blue-6);
+  text-decoration: underline;
 }
