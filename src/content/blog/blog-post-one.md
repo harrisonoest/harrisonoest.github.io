@@ -1,4 +1,4 @@
-# Blog Post One
+# Getting Started with Git
 
 ## Introduction to Git
 

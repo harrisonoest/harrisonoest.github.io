@@ -10,8 +10,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HeaderSimple } from "./organisms/Header";
 import { Footer } from "./organisms/Footer";
 import { About } from "./pages/About";
-// import { Blog } from "./pages/Blog";
-// import { BlogPost } from "./organisms/BlogPost";
+import { Blog } from "./pages/Blog";
+import { BlogPost } from "./organisms/BlogPost";
 
 const theme = createTheme({
   fontFamily: "Fira Sans, sans-serif",
@@ -26,7 +26,7 @@ export default function App() {
           styles={{
             main: {
               background: "var(--mantine-color-dark-8)",
-              height: '100%',
+              height: "100%",
             },
             header: {
               background: "var(--mantine-color-dark-7)",
@@ -44,9 +44,9 @@ export default function App() {
           <AppShell.Main>
             <Routes>
               <Route path="/" element={<About />} />
-              {/* <Route path="/about" element={<About />} />
+              <Route path="/about" element={<About />} />
               <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:id" element={<BlogPost />} /> */}
+              <Route path="/blog/:id" element={<BlogPost />} />
               <Route path="*" element={<About />} />
             </Routes>
           </AppShell.Main>

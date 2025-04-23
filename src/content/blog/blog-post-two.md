@@ -1,4 +1,4 @@
-# Blog Post Two
+# Getting Started with Docker
 
 ## Docker Fundamentals
 

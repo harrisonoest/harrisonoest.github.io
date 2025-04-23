@@ -1,23 +1,23 @@
 // === React ===
-import { useState } from 'react';
+import { useState } from "react";
 
 // === Mantine ===
-import { Burger, Container, Group, Title } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Burger, Container, Group, Title } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+import { NavLink, useLocation } from "react-router-dom";
 
 // === Components ===
-import { YetiLogo } from '../molecules/YetiLogo';
+import { YetiLogo } from "../molecules/YetiLogo";
 
 // === Styles ===
-import classes from './Header.module.css';
+import classes from "./Header.module.css";
 
 const links = [
-  { link: '/about', label: 'About' },
-  // { link: '/blog', label: 'Blog' },
-  // { link: '/projects', label: 'Projects' },
-  // { link: '/resume', label: 'Resume' },
-  // { link: '/contact', label: 'Contact' },
+  { link: "/about", label: "About" },
+  { link: "/blog", label: "Blog" },
+  // { link: "/projects", label: "Projects" },
+  // { link: "/resume", label: "Resume" },
+  // { link: "/contact", label: "Contact" },
 ];
 
 export function HeaderSimple() {
@@ -41,12 +41,14 @@ export function HeaderSimple() {
     <Container size="md" className={classes.inner}>
       <Group gap={10} visibleFrom="xs">
         <YetiLogo size={40} borderRadius="4px" />
-        <Title className={classes.title} order={2}>Harrison Oest</Title>
+        <Title className={classes.title} order={2}>
+          Harrison Oest
+        </Title>
       </Group>
       <Group gap={5} visibleFrom="xs">
         {items}
       </Group>
       <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
-    </Container >
+    </Container>
   );
 }
