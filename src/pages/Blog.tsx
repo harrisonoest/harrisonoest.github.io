@@ -40,7 +40,7 @@ export function Blog() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            width: "40vw", // Ensure full width utilization
+            width: "50vw", // Ensure full width utilization
             maxWidth: "80vw", // Prevent any constraints
           }}
         >

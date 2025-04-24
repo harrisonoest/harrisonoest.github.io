@@ -29,9 +29,10 @@
 }
 
 .content {
-  max-width: 40vw;
+  max-width: 60vw;
   margin: 0 auto;
   padding: 30px;
+  width: 100%;
 }
 
 .markdown {

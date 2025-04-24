@@ -90,7 +90,7 @@ export function BlogPost() {
 
   return (
     <ContentColumn
-      width="40vw"
+      width="60vw"
       padding="40px"
       height="auto"
       minHeight="auto"
