@@ -25,7 +25,7 @@ interface ContentColumnProps {
 export function ContentColumn({
   children,
   style,
-  backgroundColor = 'var(--mantine-color-dark-8)',
+  backgroundColor = 'var(--mantine-color-tokyoBlue-2)',
   padding = '40px',
   textAlign = 'center',
   minHeight = '10%',

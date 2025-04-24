@@ -103,7 +103,7 @@ export function About() {
         height="auto"
         minHeight="auto"
         textAlign="left"
-        backgroundColor={theme.colors.dark[7]}
+        backgroundColor={theme.colors.tokyoBlue[2]}
       >
         <Grid gutter="xl">
           <Grid.Col span={{ base: 12, md: 4 }}>
@@ -143,7 +143,7 @@ export function About() {
         padding="40px"
         height="auto"
         minHeight="auto"
-        backgroundColor={theme.colors.dark[8]}
+        backgroundColor={theme.colors.tokyoBlue[2]}
       >
         <Title order={2} mb="xl" className={classes.sectionTitle}>
           Skills
@@ -176,7 +176,7 @@ export function About() {
         height="auto"
         minHeight="auto"
         textAlign="left"
-        backgroundColor={theme.colors.dark[7]}
+        backgroundColor={theme.colors.tokyoBlue[2]}
       >
         <Title order={2} mb="xl" className={classes.sectionTitle}>
           Experience
@@ -225,7 +225,7 @@ export function About() {
         height="auto"
         minHeight="auto"
         textAlign="left"
-        backgroundColor={theme.colors.dark[8]}
+        backgroundColor={theme.colors.tokyoBlue[2]}
       >
         <Title order={2} mb="xl" className={classes.sectionTitle}>
           Education
@@ -270,7 +270,7 @@ export function About() {
         height="auto"
         minHeight="auto"
         textAlign="left"
-        backgroundColor={theme.colors.dark[7]}
+        backgroundColor={theme.colors.tokyoBlue[2]}
       >
         <Title order={2} mb="xl" className={classes.sectionTitle}>
           Projects
@@ -308,21 +308,6 @@ export function About() {
           </List>
         </Box>
       </ContentColumn>
-
-      {/* Contact section */}
-      {/* <ContentColumn
-        padding="40px"
-        height="auto"
-        minHeight="auto"
-        textAlign="center"
-        backgroundColor={theme.colors.dark[8]}
-      >
-        <Title order={2} mb="xl" className={classes.sectionTitle}>Get In Touch</Title>
-        <Text size="lg" mb="md">
-          I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-        </Text>
-        <Text size="lg" fw={700} c={theme.colors.blue[4]}>harrison.oest@gmail.com</Text>
-      </ContentColumn> */}
     </Box>
   );
 }

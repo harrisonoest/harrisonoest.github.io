@@ -90,7 +90,6 @@ export function BlogPostCard({
         </div>
         <Button
           variant="white"
-          color="dark"
           onClick={() => navigate(`/blog/${id}`)}
           style={{ alignSelf: "flex-start" }}
         >

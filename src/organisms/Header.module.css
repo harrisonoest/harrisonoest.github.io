@@ -9,7 +9,7 @@
 .title {
   font-size: var(--mantine-font-size-xl);
   font-weight: 500;
-  color: var(--mantine-color-gray-3);
+  color: var(--mantine-color-tokyoBlue-4);
   transition: color 0.2s ease;
 }
 
@@ -19,18 +19,18 @@
   padding: 8px 12px;
   border-radius: var(--mantine-radius-sm);
   text-decoration: none;
-  color: var(--mantine-color-gray-3);
+  color: var(--mantine-color-tokyoBlue-4);
   font-size: var(--mantine-font-size-sm);
   font-weight: 500;
   transition: background-color 0.2s ease;
 
   &:hover {
-    background-color: var(--mantine-color-dark-6);
-    color: var(--mantine-color-blue-filled);
+    background-color: var(--mantine-color-tokyoBlue-3);
+    color: var(--mantine-color-tokyoBlue-4);
   }
 
   [data-mantine-color-scheme] &[data-active] {
-    background-color: var(--mantine-color-blue-filled);
+    background-color: var(--mantine-color-tokyoBlue-4);
     color: var(--mantine-color-white);
   }
 }
