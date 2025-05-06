@@ -49,14 +49,13 @@
 }
 
 .inlineCode {
-  background-color: var(--mantine-color-tokyoBlue-4);
-  padding: 2px 6px;
+  padding: 2px 4px;
   border-radius: 4px;
+  border: 1px solid var(--mantine-color-tokyoBlue-4);
   font-family: monospace;
 }
 
 .codeBlock {
-  background-color: var(--mantine-color-tokyoBlue-4);
   margin: 20px 0;
   overflow-x: auto;
 }

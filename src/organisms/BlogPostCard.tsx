@@ -1,11 +1,11 @@
-// ======== React ======== //
+// === React ===
 import { useNavigate } from "react-router-dom";
 
-// ======== Mantine ======== //
+// === Mantine ===
 import { Button, Paper, Text, Title } from "@mantine/core";
 
-// ======== Styles ======== //
-import blogClasses from "../pages/Blog.module.css";
+// === Styles ===
+import classes from "./BlogPostCard.module.css";
 
 /**
  * Props for the BlogPostCard component
@@ -18,10 +18,10 @@ interface BlogPostCardProps {
 }
 
 /**
- * BlogPostCard component displays an individual blog post in a horizontal list item format
+ * BlogPostCard component displays an individual blog post in a vertical card format
  *
  * This component is used in the Blog page to display a preview of each blog post in a list.
- * It shows a thumbnail image on the left and content on the right with a "Read article" button
+ * It shows a thumbnail image on top and content below with a "Read article" button
  * that navigates to the full blog post.
  *
  * @param id - Unique identifier for the blog post
@@ -37,64 +37,34 @@ export function BlogPostCard({
 }: BlogPostCardProps) {
   const navigate = useNavigate();
 
-  // This component renders a blog post card in a horizontal list format
+  // This component renders a blog post card in a vertical format
   return (
-    <Paper
-      shadow="md"
-      p="md"
-      radius="md"
-      className={blogClasses.card}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        marginBottom: "20px",
-        overflow: "hidden",
-        width: "100%",
-        maxWidth: "80vw", // Using viewport width for better responsiveness
-      }}
-    >
-      {/* Left side - Image thumbnail with larger dimensions for wider screens */}
+    <Paper shadow="md" p="md" radius="md" className={classes.cardContainer}>
+      {/* Top - Image thumbnail */}
       <div
-        style={{
-          backgroundImage: `url(${image})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          width: "100%", // Using viewport width for better responsiveness
-          height: "10vw", // Maintain aspect ratio with viewport height
-          borderRadius: "6px",
-        }}
+        className={classes.imageContainer}
+        style={{ backgroundImage: `url(${image})` }}
       />
 
-      {/* Right side - Content with improved spacing for wider layout */}
-      <div
-        style={{
-          flex: 1,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          padding: "0.5vw 1vw", // Responsive padding using viewport width
-          width: "100%",
-        }}
-      >
+      {/* Bottom - Content section */}
+      <div className={classes.contentContainer}>
         <div>
-          <Text className={blogClasses.category} size="md">
+          <Text className={classes.category} size="md">
             # {category}
           </Text>
-          <Title
-            order={3}
-            className={blogClasses.title}
-            style={{ marginTop: "8px", marginBottom: "12px" }}
-          >
+          <Title className={classes.title} order={3}>
             {title}
           </Title>
         </div>
-        <Button
-          variant="white"
-          onClick={() => navigate(`/blog/${id}`)}
-          style={{ alignSelf: "flex-start" }}
-        >
-          Read article
-        </Button>
+        <div className={classes.buttonContainer}>
+          <Button
+            variant="white"
+            onClick={() => navigate(`/blog/${id}`)}
+            className={classes.readButton}
+          >
+            Read Article
+          </Button>
+        </div>
       </div>
     </Paper>
   );

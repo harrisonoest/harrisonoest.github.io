@@ -1,0 +1,80 @@
+/* Card container */
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  max-width: 60vw;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image thumbnail */
+.imageContainer {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 10vw;
+  border-radius: 6px;
+}
+
+/* Content container */
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  flex: 1;
+}
+
+/* Category text */
+.category {
+  opacity: 0.7;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Title */
+.title {
+  font-family: Greycliff CF, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Button container */
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+/* Button styles */
+.readButton {
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.readButton:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cardContainer {
+    max-width: 95vw;
+  }
+
+  .imageContainer {
+    height: 30vw;
+  }
+
+  .contentContainer {
+    padding: 16px;
+  }
+}

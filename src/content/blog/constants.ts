@@ -9,21 +9,21 @@ export const blogPosts: BlogPostData[] = [
   {
     id: "blog-basic-sql-commands",
     image:
-      "https://images.unsplash.com/photo-1607798748738-b15c40d33d57?q=80&w=1470&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1662026911591-335639b11db6?q=80&w=1470&auto=format&fit=crop",
     title: "Basic SQL Commands",
     category: "sql",
   },
   {
     id: "blog-getting-started-with-docker",
     image:
-      "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1420&auto=format&fit=crop",
+      "https://www.docker.com/app/uploads/2023/08/logo-guide-logos-1.svg",
     title: "Getting Started with Docker",
     category: "docker",
   },
   {
     id: "blog-git-commands",
     image:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1470&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=1470&auto=format&fit=crop",
     title: "How to Use Git",
     category: "git",
   },

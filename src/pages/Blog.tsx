@@ -44,7 +44,6 @@ export function Blog() {
         minHeight="auto"
         textAlign="left"
         backgroundColor={theme.colors.tokyoBlue[2]}
-        style={{ width: "60vw" }}
       >
         <Box className={classes.blogPostsContainer}>
           {blogPosts.map((post) => (
