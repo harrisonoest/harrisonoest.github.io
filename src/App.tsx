@@ -15,11 +15,11 @@ import { Footer } from "./organisms/Footer";
 import { About } from "./pages/About";
 import { Blog } from "./pages/Blog";
 import { BlogPost } from "./organisms/BlogPost";
+import { Projects } from "./pages/Projects";
 
 export default function App() {
   return (
     <MantineProvider theme={tokyoNightTheme} defaultColorScheme="dark">
-      {/* Why: Custom global styles must be rendered as a child using <Global /> in Mantine v7 */}
       <Global styles={tokyoNightGlobalStyles} />
       <BrowserRouter>
         <AppShell>
@@ -32,6 +32,7 @@ export default function App() {
               <Route path="/about" element={<About />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:id" element={<BlogPost />} />
+              <Route path="/projects" element={<Projects />} />
               <Route path="*" element={<About />} />
             </Routes>
           </AppShell.Main>
