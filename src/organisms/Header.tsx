@@ -16,7 +16,7 @@ const links = [
   { link: "/about", label: "About" },
   { link: "/blog", label: "Blog" },
   { link: "/projects", label: "Projects" },
-  // { link: "/resume", label: "Resume" },
+  { link: "/resume", label: "Resume" },
   // { link: "/contact", label: "Contact" },
 ];
 
