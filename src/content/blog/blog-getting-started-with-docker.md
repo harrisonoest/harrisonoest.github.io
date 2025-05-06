@@ -35,8 +35,6 @@ Docker uses a client-server architecture. The Docker client communicates with th
 3. **Docker Images**: Read-only templates used to create containers
 4. **Docker Containers**: Runnable instances of Docker images
 
-![Docker Containers](https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1420&auto=format&fit=crop)
-
 ## Docker Compose
 
 Docker Compose is a tool for defining and running multi-container Docker applications. With a single command, you can create and start all the services from your configuration.

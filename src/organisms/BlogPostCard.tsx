@@ -50,6 +50,7 @@ export function BlogPostCard({
         marginBottom: "20px",
         overflow: "hidden",
         width: "100%",
+        maxWidth: "80vw", // Using viewport width for better responsiveness
       }}
     >
       {/* Left side - Image thumbnail with larger dimensions for wider screens */}
@@ -58,10 +59,9 @@ export function BlogPostCard({
           backgroundImage: `url(${image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          width: "100%",
-          height: "160px",
+          width: "100%", // Using viewport width for better responsiveness
+          height: "10vw", // Maintain aspect ratio with viewport height
           borderRadius: "6px",
-          margin: "0 24px",
         }}
       />
 
@@ -72,7 +72,7 @@ export function BlogPostCard({
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          padding: "4px 0",
+          padding: "0.5vw 1vw", // Responsive padding using viewport width
           width: "100%",
         }}
       >

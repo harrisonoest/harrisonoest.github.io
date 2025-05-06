@@ -1,53 +1,56 @@
-// ====== Mantine ====== //
-import { Box, Text, Title } from "@mantine/core";
+// === Mantine ===
+import { Box, Text, Title, useMantineTheme } from "@mantine/core";
 
-// ====== Components ====== //
+// === Components ===
 import { ContentColumn } from "../molecules/ContentColumn";
 import { BlogPostCard } from "../organisms/BlogPostCard";
 
-// ====== Styles ====== //
+// === Styles ===
 import classes from "./Blog.module.css";
 
-// ====== Constants ====== //
+// === Constants ===
 import { blogPosts } from "../content/blog/constants";
 
 /**
  * Blog page component that displays a list of blog posts
  */
+
 export function Blog() {
+  const theme = useMantineTheme();
+
+  // No wrapper needed as we're using the BlogPostCard directly
+
   return (
     <Box className={classes.container}>
+      {/* Hero section */}
       <ContentColumn
-        width="100%"
+        padding="60px"
+        height="auto"
+        minHeight="auto"
+        textAlign="center"
+        backgroundColor={theme.colors.tokyoBlue[2]}
+      >
+        <Title order={1} className={classes.sectionTitle}>
+          Latest Blog Posts
+        </Title>
+        <Text size="lg" mt="md" mb="xl" maw="800px" mx="auto">
+          Just some random thoughts and things I find interesting!
+        </Text>
+      </ContentColumn>
+
+      <ContentColumn
         padding="40px"
         height="auto"
         minHeight="auto"
         textAlign="left"
-        // Override the default Container size constraint to allow full width
-        style={{ maxWidth: "1400px", margin: "0 auto" }}
+        backgroundColor={theme.colors.tokyoBlue[2]}
+        style={{ width: "60vw" }}
       >
-        <Title order={1} mb="xl" style={{ textAlign: "center" }}>
-          Latest Blog Posts
-        </Title>
-        <Text mb="xl" style={{ textAlign: "center" }}>
-          Just some random thoughts and things I find interesting!
-        </Text>
-
-        {/* List layout for blog posts with wider content area */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "50vw", // Ensure full width utilization
-            maxWidth: "80vw", // Prevent any constraints
-          }}
-        >
+        <Box className={classes.blogPostsContainer}>
           {blogPosts.map((post) => (
             <BlogPostCard key={post.id} {...post} />
           ))}
-        </div>
+        </Box>
       </ContentColumn>
     </Box>
   );
