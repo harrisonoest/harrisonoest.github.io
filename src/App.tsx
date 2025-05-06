@@ -17,6 +17,7 @@ import { Blog } from "./pages/Blog";
 import { BlogPost } from "./organisms/BlogPost";
 import { Projects } from "./pages/Projects";
 import { Resume } from "./pages/Resume";
+import { Contact } from "./pages/Contact";
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
               <Route path="/blog/:id" element={<BlogPost />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/resume" element={<Resume />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<About />} />
             </Routes>
           </AppShell.Main>
