@@ -5,6 +5,7 @@ import {
   Box,
   Divider,
   Grid,
+  Group,
   List,
   Paper,
   Text,
@@ -14,6 +15,27 @@ import {
 
 // === Components ===
 import { ContentColumn } from "../molecules/ContentColumn";
+
+// === Icons ===
+import {
+  IconBrandTypescript,
+  IconBrandRust,
+  IconBrandCSharp,
+  IconBrandPython,
+  IconTerminal2,
+  IconBrandGolang,
+  IconBrandReact,
+  IconBrandNodejs,
+  IconPuzzle, // Using IconPuzzle as a generic for QML & Qt for now
+  IconBrandMongodb,
+  IconBrandMysql,
+  IconDatabase, // Using IconDatabase as a generic for MySQL
+  IconBrandAws,
+  IconServer, // Using IconServer as a generic for NGINX
+  IconBrandDocker,
+  IconBrandUbuntu,
+  IconBrandGitlab,
+} from "@tabler/icons-react";
 
 // === Styles ===
 import classes from "./About.module.css";
@@ -31,13 +53,41 @@ export function About() {
   const skills = [
     {
       category: "Languages",
-      items: ["TypeScript", "Rust", "C#", "Python", "Bash", "Go"],
+      items: [
+        { name: "TypeScript", icon: IconBrandTypescript },
+        { name: "Rust", icon: IconBrandRust },
+        { name: "C#", icon: IconBrandCSharp },
+        { name: "Python", icon: IconBrandPython },
+        { name: "Bash", icon: IconTerminal2 },
+        { name: "Go", icon: IconBrandGolang },
+      ],
     },
-    { category: "Frameworks", items: ["React", "Node.js", "QML", "Qt"] },
-    { category: "Databases", items: ["MongoDB", "PostgreSQL", "MySQL"] },
+    {
+      category: "Frameworks",
+      items: [
+        { name: "React", icon: IconBrandReact },
+        { name: "Node.js", icon: IconBrandNodejs },
+        { name: "QML", icon: IconPuzzle },
+        { name: "Qt", icon: IconPuzzle },
+      ],
+    },
+    {
+      category: "Databases",
+      items: [
+        { name: "MongoDB", icon: IconBrandMongodb },
+        { name: "PostgreSQL", icon: IconDatabase },
+        { name: "MySQL", icon: IconBrandMysql },
+      ],
+    },
     {
       category: "Infrastructure",
-      items: ["AWS", "NGINX", "Docker", "Linux", "GitLab CI/CD"],
+      items: [
+        { name: "AWS", icon: IconBrandAws },
+        { name: "NGINX", icon: IconServer },
+        { name: "Docker", icon: IconBrandDocker },
+        { name: "Linux", icon: IconBrandUbuntu },
+        { name: "GitLab CI/CD", icon: IconBrandGitlab },
+      ],
     },
   ];
 
@@ -120,7 +170,9 @@ export function About() {
             <Title order={1} className={classes.name}>
               Hello!
             </Title>
-            {/* <Text size="lg" c="dimmed" className={classes.title}>Back End Lead Engineer</Text> */}
+            <Text size="lg" c="dimmed" className={classes.title}>
+              Lead Back End Engineer
+            </Text>
 
             <Text mt="xl" size="md" className={classes.bio}>
               I'm a skilled developer with expertise in TypeScript, Rust, and
@@ -130,9 +182,15 @@ export function About() {
             </Text>
 
             {/* <Group mt="md">
-              <Badge size="lg" radius="sm">Available for hire</Badge>
-              <Badge size="lg" radius="sm" color="blue">Remote</Badge>
-              <Badge size="lg" radius="sm" color="teal">Freelance</Badge>
+              <Badge size="lg" radius="sm">
+                Available for hire
+              </Badge>
+              <Badge size="lg" radius="sm" color="blue">
+                Remote
+              </Badge>
+              <Badge size="lg" radius="sm" color="teal">
+                Freelance
+              </Badge>
             </Group> */}
           </Grid.Col>
         </Grid>
@@ -143,31 +201,55 @@ export function About() {
         padding="40px"
         height="auto"
         minHeight="auto"
-        backgroundColor={theme.colors.tokyoBlue[2]}
+        backgroundColor={theme.colors.tokyoBlue[2]} // Keep existing background for the section
       >
-        <Title order={2} mb="xl" className={classes.sectionTitle}>
-          Skills
-        </Title>
+        <div className={classes.sectionTitleContainer}>
+          <Title order={2} mb="xl" className={classes.sectionTitle}>
+            Skills
+          </Title>
+        </div>
 
-        <Grid>
+        <Box className={classes.skillsContainer}>
           {skills.map((skillGroup) => (
-            <Grid.Col
-              key={skillGroup.category}
-              span={{ base: 12, sm: 6, md: 3 }}
-            >
-              <Paper p="xl" radius="md" className={classes.skillCard}>
-                <Title order={4} mb="sm">
-                  {skillGroup.category}
-                </Title>
-                <List spacing="xs">
-                  {skillGroup.items.map((skill) => (
-                    <List.Item key={skill}>{skill}</List.Item>
-                  ))}
-                </List>
-              </Paper>
-            </Grid.Col>
+            <Box key={skillGroup.category} mb="xl">
+              <Title order={3} className={classes.skillCategoryTitle} mb="md">
+                {skillGroup.category}
+              </Title>
+              <Box className={classes.skillItemsWrapper}>
+                {skillGroup.items.map((skill) => (
+                  <Paper
+                    key={skill.name}
+                    className={classes.skillItemPill}
+                    p="sm"
+                    radius="xl"
+                    withBorder
+                    shadow="xs" // Added a light shadow for better visual separation
+                  >
+                    <Group
+                      gap="sm"
+                      align="center"
+                      style={{ justifyContent: "center" }}
+                    >
+                      <skill.icon
+                        size={32} // Larger icon
+                        stroke={1.5}
+                        color={theme.colors.tokyoBlue[4]}
+                        style={{ display: "flex", alignItems: "center" }}
+                      />
+                      <Text
+                        size="lg"
+                        fw={500}
+                        style={{ display: "flex", alignItems: "center" }}
+                      >
+                        {skill.name}
+                      </Text>
+                    </Group>
+                  </Paper>
+                ))}
+              </Box>
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </ContentColumn>
 
       {/* Experience section */}

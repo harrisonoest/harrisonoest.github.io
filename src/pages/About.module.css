@@ -48,17 +48,42 @@
   background-color: var(--mantine-color-tokyoBlue-4);
 }
 
-.skillCard {
-  height: 100%;
+.sectionTitleContainer {
+  width: 100%;
   text-align: left;
-  background-color: var(--mantine-color-tokyoBlue-4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.skillCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.skillCategoryTitle {
+  color: var(
+    --mantine-color-white
+  ); /* Or another prominent color from your theme */
+  /* text-transform: uppercase; */
+  /* letter-spacing: 1px; */
+  /* Consider if you want a bottom border or other distinction */
 }
+
+.skillItemsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--mantine-spacing-md); /* Spacing between pills */
+  justify-content: center; /* Center the pills horizontally */
+}
+
+.skillItemPill {
+  display: inline-flex; /* Make the pill itself an inline-flex container */
+  align-items: center; /* Vertically center the content of the pill (the Group) */
+  /* background-color: var(--mantine-color-tokyoBlue-3); Slightly different from section bg */
+  /* border-color: var(--mantine-color-tokyoBlue-5); */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: default; /* Or 'pointer' if you plan to make them interactive */
+}
+
+.skillItemPill:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: var(--mantine-shadow-md);
+}
+
+/* End New Skills Section Styles */
 
 .projectLink {
   color: var(--mantine-color-blue-4);

@@ -24,7 +24,6 @@ export function Blog() {
     <Box className={classes.container}>
       {/* Hero section */}
       <ContentColumn
-        padding="60px"
         height="auto"
         minHeight="auto"
         textAlign="center"
@@ -33,7 +32,7 @@ export function Blog() {
         <Title order={1} className={classes.sectionTitle}>
           Latest Blog Posts
         </Title>
-        <Text size="lg" mt="md" mb="xl" maw="800px" mx="auto">
+        <Text size="lg" maw="800px" mx="auto">
           Just some random thoughts and things I find interesting!
         </Text>
       </ContentColumn>

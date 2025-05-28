@@ -39,22 +39,50 @@ export function BlogPost() {
     }
 
     // Fetch the markdown content
-    fetch(`/src/content/blog/${id}.md`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to load blog post");
+    const loadBlogPost = async () => {
+      try {
+        // Try multiple paths to find the blog post content
+        const paths = [
+          // Path 1: GitHub Pages deployment path with BASE_URL
+          `${import.meta.env.BASE_URL || ""}/content/blog/${id}.md`,
+          // Path 2: Development path
+          `/src/content/blog/${id}.md`,
+          // Path 3: Alternative GitHub Pages path
+          `/content/blog/${id}.md`,
+        ];
+
+        let content = null;
+        let lastError = null;
+
+        // Try each path until one works
+        for (const path of paths) {
+          try {
+            const response = await fetch(path);
+
+            if (response.ok) {
+              content = await response.text();
+              break; // Exit the loop if successful
+            }
+          } catch (err) {
+            lastError = err;
+          }
         }
-        return response.text();
-      })
-      .then((text) => {
-        setContent(text);
+
+        if (content) {
+          setContent(content);
+          setLoading(false);
+        } else {
+          throw (
+            lastError || new Error("Failed to load blog post from all paths")
+          );
+        }
+      } catch (err) {
+        setError("Failed to load blog post content. Please try again later.");
         setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error loading blog post:", err);
-        setError("Failed to load blog post content");
-        setLoading(false);
-      });
+      }
+    };
+
+    loadBlogPost();
   }, [id, navigate, post]);
 
   // Handle loading state
