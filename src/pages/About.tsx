@@ -389,6 +389,38 @@ export function About() {
             </List.Item>
           </List>
         </Box>
+
+        <Box mb="xl" w="100%">
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              width: "100%",
+            }}
+          >
+            <Title order={4}>Pegasus</Title>
+            <Text size="sm" style={{ textAlign: "right" }}>
+              <a
+                href="https://github.com/harrisonoest/Pegasus"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={classes.projectLink}
+              >
+                github.com/harrisonoest/Pegasus
+              </a>
+            </Text>
+          </div>
+          <List mt="md" spacing="xs">
+            <List.Item>
+              Created a Rust web server for downloading and delivering media
+            </List.Item>
+            <List.Item>
+              Grabs media links, downloads them in various formats, and delivers
+              them to the client
+            </List.Item>
+          </List>
+        </Box>
       </ContentColumn>
     </Box>
   );
