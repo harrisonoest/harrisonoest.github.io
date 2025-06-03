@@ -42,45 +42,24 @@ export function Projects() {
   // Project data - replace with your actual projects
   const projects: Project[] = [
     {
-      id: "project-1",
-      title: "Personal Website",
+      id: "primate",
+      title: "PRimate",
       description:
-        "My personal website built with React, TypeScript, and Mantine UI. Features a responsive design with blog functionality.",
+        "Created a Node.js Slack bot for pull requests. Reduces review time through automated notifications. Enhances team collaboration with centralized feedback tracking.",
       image:
-        "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=2400&auto=format&fit=crop",
-      tags: ["React", "TypeScript", "Mantine"],
-      liveUrl: "https://harrisonoest.github.io",
-      repoUrl: "https://github.com/harrisonoest/harrisonoest.github.io",
+        "https://images.unsplash.com/photo-1463852247062-1bbca38f7805?q=80&w=2400&auto=format&fit=crop", // Placeholder image for PRimate
+      tags: ["Node.js", "Slack", "Bot", "Collaboration", "Automation"],
+      repoUrl: "https://github.com/harrisonoest/PRimate",
     },
     {
-      id: "project-2",
-      title: "Rust Microservice",
+      id: "pegasus",
+      title: "Pegasus",
       description:
-        "High-performance microservice built with Rust. Optimized for speed and reliability with comprehensive test coverage.",
+        "Created a Rust web server for downloading and delivering media. Grabs media links, downloads them in various formats, and delivers them to the client.",
       image:
-        "https://images.unsplash.com/photo-1591267990532-e5bdb1b0ceb8?q=80&w=2274&auto=format&fit=crop",
-      tags: ["Rust", "Microservices", "API"],
-      repoUrl: "https://github.com/harrisonoest/rust-microservice",
-    },
-    {
-      id: "project-3",
-      title: "MongoDB Data Pipeline",
-      description:
-        "ETL pipeline for processing and analyzing large datasets using MongoDB and Node.js.",
-      image:
-        "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=2021&auto=format&fit=crop",
-      tags: ["MongoDB", "Node.js", "Data Processing"],
-      repoUrl: "https://github.com/harrisonoest/mongodb-pipeline",
-    },
-    {
-      id: "project-4",
-      title: "Linux System Monitor",
-      description:
-        "Desktop application for monitoring system resources on Linux. Built with Qt and C++.",
-      image:
-        "https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=2274&auto=format&fit=crop",
-      tags: ["C++", "Qt", "Linux"],
-      repoUrl: "https://github.com/harrisonoest/linux-monitor",
+        "https://images.unsplash.com/photo-1628250193602-2ccd39756e78?q=80&w=2400&auto=format&fit=crop", // Placeholder image for Pegasus
+      tags: ["Rust", "Web Server", "Media", "Downloader", "API"],
+      repoUrl: "https://github.com/harrisonoest/Pegasus",
     },
   ];
 
@@ -103,7 +82,7 @@ export function Projects() {
         </Title>
       </Group>
 
-      <Text size="sm" color="dimmed" className={classes.projectDescription}>
+      <Text size="sm" className={classes.projectDescription}>
         {project.description}
       </Text>
 
