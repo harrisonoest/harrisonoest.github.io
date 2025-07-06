@@ -61,6 +61,16 @@ export function Projects() {
       tags: ["Rust", "Web Server", "Media", "Downloader", "API"],
       repoUrl: "https://github.com/harrisonoest/Pegasus",
     },
+    {
+      id: "yt-duration-filter",
+      title: "YouTube Duration Filter",
+      description:
+        "A browser extension that filters YouTube videos by duration. Helps users find videos within their preferred time range for better content discovery.",
+      image:
+        "https://images.unsplash.com/photo-1521302200778-33500795e128?q=80&w=1470&auto=format&fit=crop", // Placeholder image for YouTube Duration Filter
+      tags: ["JavaScript", "Browser Extension", "YouTube", "Filter", "Chrome"],
+      repoUrl: "https://github.com/harrisonoest/yt-duration-filter",
+    },
   ];
 
   // Project card component
