@@ -53,8 +53,8 @@ export function Contact() {
     {
       icon: <IconMail size={24} />,
       title: "Email",
-      value: "harrison.oest@example.com",
-      link: "mailto:harrison.oest@example.com",
+      value: "harrison.oest@gmail.com",
+      link: "mailto:harrison.oest@gmail.com",
     },
     {
       icon: <IconBrandGithub size={24} />,
