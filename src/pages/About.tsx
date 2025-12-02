@@ -1,5 +1,24 @@
 import { ContentColumn } from "../molecules/ContentColumn";
 import HarrisonHeadshot from "../assets/harrison.jpeg";
+import {
+  IconBrandTypescript,
+  IconBrandRust,
+  IconBrandCSharp,
+  IconBrandPython,
+  IconTerminal2,
+  IconBrandGolang,
+  IconBrandReact,
+  IconBrandNodejs,
+  IconPuzzle,
+  IconBrandMongodb,
+  IconBrandMysql,
+  IconDatabase,
+  IconBrandAws,
+  IconServer,
+  IconBrandDocker,
+  IconBrandUbuntu,
+  IconBrandGitlab,
+} from "@tabler/icons-react";
 import "./About.css";
 
 export function About() {
@@ -46,7 +65,46 @@ export function About() {
     },
   ];
 
-  const skills = ["TypeScript", "Rust", "C#", "Python", "Bash", "Go", "React", "Node.js", "AWS", "Docker", "PostgreSQL", "MongoDB"];
+  const skills = [
+    {
+      category: "Languages",
+      items: [
+        { name: "TypeScript", icon: IconBrandTypescript },
+        { name: "Rust", icon: IconBrandRust },
+        { name: "C#", icon: IconBrandCSharp },
+        { name: "Python", icon: IconBrandPython },
+        { name: "Bash", icon: IconTerminal2 },
+        { name: "Go", icon: IconBrandGolang },
+      ],
+    },
+    {
+      category: "Frameworks",
+      items: [
+        { name: "React", icon: IconBrandReact },
+        { name: "Node.js", icon: IconBrandNodejs },
+        { name: "QML", icon: IconPuzzle },
+        { name: "Qt", icon: IconPuzzle },
+      ],
+    },
+    {
+      category: "Databases",
+      items: [
+        { name: "MongoDB", icon: IconBrandMongodb },
+        { name: "PostgreSQL", icon: IconDatabase },
+        { name: "MySQL", icon: IconBrandMysql },
+      ],
+    },
+    {
+      category: "Infrastructure",
+      items: [
+        { name: "AWS", icon: IconBrandAws },
+        { name: "NGINX", icon: IconServer },
+        { name: "Docker", icon: IconBrandDocker },
+        { name: "Linux", icon: IconBrandUbuntu },
+        { name: "GitLab CI/CD", icon: IconBrandGitlab },
+      ],
+    },
+  ];
 
   return (
     <div className="container">
@@ -67,11 +125,19 @@ export function About() {
 
       <ContentColumn>
         <h2>Skills</h2>
-        <div className="skills-grid">
-          {skills.map((skill) => (
-            <span key={skill} className="skill-tag">{skill}</span>
-          ))}
-        </div>
+        {skills.map((skillGroup) => (
+          <div key={skillGroup.category} className="skill-category">
+            <h3>{skillGroup.category}</h3>
+            <div className="skills-grid">
+              {skillGroup.items.map((skill) => (
+                <span key={skill.name} className="skill-tag">
+                  <skill.icon size={20} stroke={1.5} />
+                  {skill.name}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
       </ContentColumn>
 
       <ContentColumn>
