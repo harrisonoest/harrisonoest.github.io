@@ -1,0 +1,50 @@
+.header {
+  background: var(--surface);
+  border-bottom: 2px solid var(--dimmed);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--blue);
+  margin: 0;
+}
+
+.header-nav {
+  display: flex;
+  gap: 5px;
+}
+
+.header-link {
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: var(--blue);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.header-link:hover {
+  background: var(--bg);
+}
+
+.header-link[data-active] {
+  background: var(--blue);
+  color: var(--bg);
+}

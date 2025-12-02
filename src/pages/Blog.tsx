@@ -1,55 +1,23 @@
-// === Mantine ===
-import { Box, Text, Title, useMantineTheme } from "@mantine/core";
-
-// === Components ===
 import { ContentColumn } from "../molecules/ContentColumn";
 import { BlogPostCard } from "../organisms/BlogPostCard";
-
-// === Styles ===
-import classes from "./Blog.module.css";
-
-// === Constants ===
 import { blogPosts } from "../content/blog/constants";
-
-/**
- * Blog page component that displays a list of blog posts
- */
+import "./Blog.css";
 
 export function Blog() {
-  const theme = useMantineTheme();
-
-  // No wrapper needed as we're using the BlogPostCard directly
-
   return (
-    <Box className={classes.container}>
-      {/* Hero section */}
-      <ContentColumn
-        height="auto"
-        minHeight="auto"
-        textAlign="center"
-        backgroundColor={theme.colors.tokyoBlue[2]}
-      >
-        <Title order={1} className={classes.sectionTitle}>
-          Latest Blog Posts
-        </Title>
-        <Text size="lg" maw="800px" mx="auto">
-          Just some random thoughts and things I find interesting!
-        </Text>
+    <div className="blog-container">
+      <ContentColumn>
+        <h1>Latest Blog Posts</h1>
+        <p>Just some random thoughts and things I find interesting!</p>
       </ContentColumn>
 
-      <ContentColumn
-        padding="40px"
-        height="auto"
-        minHeight="auto"
-        textAlign="left"
-        backgroundColor={theme.colors.tokyoBlue[2]}
-      >
-        <Box className={classes.blogPostsContainer}>
+      <ContentColumn>
+        <div className="blog-grid">
           {blogPosts.map((post) => (
             <BlogPostCard key={post.id} {...post} />
           ))}
-        </Box>
+        </div>
       </ContentColumn>
-    </Box>
+    </div>
   );
 }

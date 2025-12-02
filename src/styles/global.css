@@ -1,0 +1,71 @@
+/* Tokyo Night Theme Variables */
+:root {
+  --bg: #1a1e31;
+  --surface: #24283b;
+  --text: #a9b1d6;
+  --dimmed: #565f89;
+  --blue: #7aa2f7;
+  --purple: #bb9af7;
+  --cyan: #7dcfff;
+  --green: #9ece6a;
+  --red: #f7768e;
+  --yellow: #e0af68;
+}
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--purple);
+}
+
+/* Selection */
+::selection {
+  background: var(--purple);
+  color: var(--bg);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.surface {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 1.5rem;
+}

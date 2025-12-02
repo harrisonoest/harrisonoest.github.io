@@ -1,255 +1,115 @@
-// === React ===
-import { useState } from "react";
-
-// === Mantine ===
-import {
-  Box,
-  Text,
-  Title,
-  TextInput,
-  Textarea,
-  Button,
-  Group,
-  SimpleGrid,
-  Paper,
-  useMantineTheme,
-  Alert,
-} from "@mantine/core";
-import { useForm } from "@mantine/form";
-import {
-  IconMail,
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconSend,
-  IconCheck,
-  IconAlertCircle,
-} from "@tabler/icons-react";
-
-// === Components ===
+import { useState, FormEvent } from "react";
 import { ContentColumn } from "../molecules/ContentColumn";
+import "./Contact.css";
 
-// === Styles ===
-import classes from "./Contact.module.css";
-
-/**
- * Contact page component that displays contact information and a contact form
- */
 export function Contact() {
-  const theme = useMantineTheme();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState(false);
-
-  // Define the contact info interface
-  interface ContactInfo {
-    icon: React.ReactNode;
-    title: string;
-    value: string;
-    link: string;
-  }
-
-  // Contact information
-  const contactInfo: ContactInfo[] = [
-    {
-      icon: <IconMail size={24} />,
-      title: "Email",
-      value: "harrison.oest@gmail.com",
-      link: "mailto:harrison.oest@gmail.com",
-    },
-    {
-      icon: <IconBrandGithub size={24} />,
-      title: "GitHub",
-      value: "github.com/harrisonoest",
-      link: "https://github.com/harrisonoest",
-    },
-    {
-      icon: <IconBrandLinkedin size={24} />,
-      title: "LinkedIn",
-      value: "linkedin.com/in/harrisonoest",
-      link: "https://linkedin.com/in/harrisonoest",
-    },
-  ];
-
-  // Form for contact
-  const form = useForm({
-    initialValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
-    validate: {
-      name: (value) => (value.trim().length < 2 ? "Name is required" : null),
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
-      subject: (value) =>
-        value.trim().length < 2 ? "Subject is required" : null,
-      message: (value) =>
-        value.trim().length < 10 ? "Message is too short" : null,
-    },
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
-  // Handle form submission
-  const handleSubmit = (values: typeof form.values) => {
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
     setSubmitting(true);
-    setError(false);
 
-    // TODO: Replace with actual form submission logic
-    // This is a simulation of form submission
     setTimeout(() => {
-      // In a real application, you would send the form data to a server
-      console.log("hhh Form submitted:", values);
+      console.log("Form submitted:", formData);
       setSubmitting(false);
       setSubmitted(true);
-      form.reset();
+      setFormData({ name: "", email: "", subject: "", message: "" });
     }, 1500);
   };
 
-  // Contact information card component
-  const ContactCard = ({ info }: { info: ContactInfo }) => (
-    <Paper p="md" radius="md" className={classes.contactCard}>
-      <Group>
-        <Box className={classes.iconContainer}>{info.icon}</Box>
-        <Box>
-          <Text fw={500} size="lg">
-            {info.title}
-          </Text>
-          <Text
-            component="a"
-            href={info.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={classes.contactLink}
-          >
-            {info.value}
-          </Text>
-        </Box>
-      </Group>
-    </Paper>
-  );
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   return (
-    <Box className={classes.container}>
-      {/* Hero section */}
-      <ContentColumn
-        padding="60px"
-        height="auto"
-        minHeight="auto"
-        textAlign="center"
-        backgroundColor={theme.colors.tokyoBlue[2]}
-      >
-        <Title order={1} className={classes.pageTitle}>
-          Get In Touch
-        </Title>
-        <Text size="lg" mt="md" mb="xl" maw="800px" mx="auto">
-          Have a question or want to work together? Feel free to reach out!
-        </Text>
+    <div className="container">
+      <ContentColumn>
+        <h1>Get In Touch</h1>
+        <p>Have a question or want to work together? Feel free to reach out!</p>
       </ContentColumn>
 
-      {/* Contact information section */}
-      <ContentColumn
-        padding="40px"
-        height="auto"
-        minHeight="auto"
-        backgroundColor={theme.colors.tokyoBlue[2]}
-      >
-        <Box mb={40} className={classes.horizontalContactContainer}>
-          {contactInfo.map((info, index) => (
-            <ContactCard key={index} info={info} />
-          ))}
-        </Box>
-
-        {/* Contact form */}
-        <Paper p="xl" radius="md" className={classes.formContainer}>
-          <Title order={2} mb="xl" ta="center">
-            Send Me a Message
-          </Title>
-
-          {submitted ? (
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                width: "100%",
-              }}
-            >
-              <Alert
-                icon={<IconCheck size={16} />}
-                title="Message Sent!"
-                color="green"
-                mb="md"
-                style={{ textAlign: "center" }}
-              >
-                Thank you for your message. I'll get back to you as soon as
-                possible.
-              </Alert>
+      <ContentColumn>
+        <div className="contact-info">
+          <a href="mailto:harrison.oest@gmail.com" className="contact-card">
+            <span className="contact-icon">✉️</span>
+            <div>
+              <strong>Email</strong>
+              <p>harrison.oest@gmail.com</p>
             </div>
-          ) : error ? (
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                width: "100%",
-              }}
-            >
-              <Alert
-                icon={<IconAlertCircle size={16} />}
-                title="Error"
-                color="red"
-                mb="md"
-                style={{ textAlign: "center" }}
-              >
-                There was an error sending your message. Please try again later.
-              </Alert>
+          </a>
+          <a href="https://github.com/harrisonoest" target="_blank" rel="noopener noreferrer" className="contact-card">
+            <span className="contact-icon">💻</span>
+            <div>
+              <strong>GitHub</strong>
+              <p>github.com/harrisonoest</p>
             </div>
-          ) : null}
+          </a>
+          <a href="https://linkedin.com/in/harrisonoest" target="_blank" rel="noopener noreferrer" className="contact-card">
+            <span className="contact-icon">💼</span>
+            <div>
+              <strong>LinkedIn</strong>
+              <p>linkedin.com/in/harrisonoest</p>
+            </div>
+          </a>
+        </div>
 
-          <form onSubmit={form.onSubmit(handleSubmit)}>
-            <SimpleGrid cols={{ base: 1, sm: 2 }} mb="md">
-              <TextInput
-                label="Name"
+        <div className="contact-form-container">
+          <h2>Send Me a Message</h2>
+
+          {submitted && (
+            <div className="success-message">
+              ✓ Thank you for your message. I'll get back to you as soon as possible.
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} className="contact-form">
+            <div className="form-row">
+              <input
+                type="text"
+                name="name"
                 placeholder="Your name"
+                value={formData.name}
+                onChange={handleChange}
                 required
-                {...form.getInputProps("name")}
               />
-              <TextInput
-                label="Email"
+              <input
+                type="email"
+                name="email"
                 placeholder="your.email@example.com"
+                value={formData.email}
+                onChange={handleChange}
                 required
-                {...form.getInputProps("email")}
               />
-            </SimpleGrid>
-
-            <TextInput
-              label="Subject"
+            </div>
+            <input
+              type="text"
+              name="subject"
               placeholder="What is this regarding?"
+              value={formData.subject}
+              onChange={handleChange}
               required
-              mb="md"
-              {...form.getInputProps("subject")}
             />
-
-            <Textarea
-              label="Message"
+            <textarea
+              name="message"
               placeholder="Your message here..."
-              minRows={5}
+              rows={5}
+              value={formData.message}
+              onChange={handleChange}
               required
-              mb="xl"
-              {...form.getInputProps("message")}
             />
-
-            <Group justify="center">
-              <Button
-                type="submit"
-                size="md"
-                loading={submitting}
-                leftSection={<IconSend size={18} />}
-                color={theme.colors.tokyoBlue[5]}
-              >
-                Send Message
-              </Button>
-            </Group>
+            <button type="submit" disabled={submitting}>
+              {submitting ? "Sending..." : "Send Message"}
+            </button>
           </form>
-        </Paper>
+        </div>
       </ContentColumn>
-    </Box>
+    </div>
   );
 }
