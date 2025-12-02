@@ -33,6 +33,12 @@
   margin: 2rem 0;
 }
 
+@media (max-width: 480px) {
+  .captcha-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .captcha-image {
   height: 150px;
   background-size: cover;

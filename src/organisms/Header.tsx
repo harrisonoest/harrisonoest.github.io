@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import yetiLogo from "../assets/yeti_150x150.webp";
 import "./Header.css";
@@ -12,6 +13,7 @@ const links = [
 
 export function HeaderSimple() {
   const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="header">
@@ -22,13 +24,25 @@ export function HeaderSimple() {
           </a>
           <h2 className="header-title">Harrison Oest</h2>
         </div>
-        <nav className="header-nav">
+        
+        <button 
+          className="header-burger" 
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
           {links.map((link) => (
             <NavLink
               key={link.label}
               to={link.link}
               className="header-link"
               data-active={location.pathname === link.link || undefined}
+              onClick={() => setMenuOpen(false)}
             >
               {link.label}
             </NavLink>
