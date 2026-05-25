@@ -39,7 +39,7 @@ export function BlogPost() {
               content = await response.text();
               break;
             }
-          } catch (err) {
+} catch {
             lastError = err;
           }
         }
@@ -50,7 +50,7 @@ export function BlogPost() {
         } else {
           throw lastError || new Error("Failed to load blog post from all paths");
         }
-      } catch (err) {
+      } catch {
         setError("Failed to load blog post content. Please try again later.");
         setLoading(false);
       }
