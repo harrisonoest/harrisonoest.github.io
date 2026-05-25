@@ -36,6 +36,38 @@ export function Projects() {
       tags: ["JavaScript", "Browser Extension"],
       repoUrl: "https://github.com/harrisonoest/yt-duration-filter",
     },
+    {
+      id: "duplicate-line-highlighter",
+      title: "Duplicate Line Highlighter",
+      description: "VS Code extension that highlights all duplicate lines in the editor, ignoring whitespace and blank lines, with live updates and configurable colors.",
+      image: "https://images.unsplash.com/photo-1463852247062-1bbca38f7805?q=80&w=2400&auto=format&fit=crop",
+      tags: ["VS Code", "Extension", "TypeScript"],
+      repoUrl: "https://github.com/harrisonoest/duplicate-line-highlighter",
+    },
+    {
+      id: "sshuttle-manager",
+      title: "SSHuttle Manager",
+      description: "CLI and TUI tool for managing sshuttle VPN connections, supporting saved configurations, groups, and automated control.",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2400&auto=format&fit=crop",
+      tags: ["Rust", "CLI", "VPN"],
+      repoUrl: "https://github.com/harrisonoest/sshuttle-manager",
+    },
+    {
+      id: "automix-ai",
+      title: "AutoMix AI",
+      description: "Python CLI tool that analyzes audio files to identify optimal DJ mix transition points using beat detection, harmonic analysis, energy-aware section detection, and spectral analysis.",
+      image: "https://images.unsplash.com/photo-1517433456456-4c962b5b25f0?q=80&w=2400&auto=format&fit=crop",
+      tags: ["Python", "Audio", "DJ", "CLI"],
+      repoUrl: "https://github.com/harrisonoest/automix-ai",
+    },
+    {
+      id: "release-radar",
+      title: "Release Radar",
+      description: "Go tool that tracks new music releases from artists in your Apple Music library and adds them to a playlist.",
+      image: "https://images.unsplash.com/photo-1496297809795-48b37dbf1928?q=80&w=2400&auto=format&fit=crop",
+      tags: ["Go", "Apple Music", "CLI", "Playlist"],
+      repoUrl: "https://github.com/harrisonoest/release-radar",
+    },
   ];
 
   return (
