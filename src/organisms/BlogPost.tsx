@@ -39,8 +39,8 @@ export function BlogPost() {
               content = await response.text();
               break;
             }
-} catch {
-            lastError = err;
+} catch (error) {
+            lastError = error;
           }
         }
 
